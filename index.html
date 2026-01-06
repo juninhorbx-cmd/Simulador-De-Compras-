@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Simulador de Compras Animado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Compras</h1>
+
+    <!-- Tela inicial -->
+    <div id="startScreen">
+      <p>Digite seu saldo inicial (até 10.000.000.000):</p>
+      <input type="number" id="initialBalance" placeholder="Ex: 1000000">
+      <button onclick="startGame()">Adicionar Dinheiro</button>
+    </div>
+
+    <!-- Mensagem de boas-vindas -->
+    <div id="welcomeMessage" class="popup">
+      <span class="close" onclick="closeWelcome()">&times;</span>
+      <p id="welcomeText"></p>
+    </div>
+
+    <!-- Tela do jogo -->
+    <div id="gameScreen" style="display:none;">
+      <h2 id="balance">Saldo: R$ 0</h2>
+      <div id="itemsContainer"></div>
+      <button onclick="restartGame()" id="restartBtn" style="display:none;">Reiniciar Jogo</button>
+      <div id="endMessage" class="popup" style="display:none;">
+        <p>Ops! Parabéns, você gastou todo o dinheiro. Reinicie o jogo para continuar.</p>
+        <span class="close" onclick="closeEnd()">&times;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Som de compra -->
+  <audio id="coinSound" src="https://www.soundjay.com/misc/sounds/coin-drop-1.mp3"></audio>
+  
+<script src="script.js"></script>
+</body>
+</html>
